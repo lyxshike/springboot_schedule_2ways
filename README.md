@@ -2,11 +2,11 @@
 
 一, spring的定时器
     1.方法上加@Scheduled 注解， 类上加@Component
-	2.在当前类或者主启动类上添加 @EnableScheduling
-	3.间隔一段时间之后执行的这2个有什么区别呢？
-	       @Scheduled(fixedRate=1000*30)，  @Scheduled(fixedDelay=1000*30)
-	    同： 两者都会在服务启动后立即执行一次。
-        异： fixedRate, 间隔时间是按上次执行的时间开始计
+    2.在当前类或者主启动类上添加 @EnableScheduling
+    3.间隔一段时间之后执行的这2个有什么区别呢？
+	 @Scheduled(fixedRate=1000*30)，  @Scheduled(fixedDelay=1000*30)
+	 同： 两者都会在服务启动后立即执行一次。
+         异： fixedRate, 间隔时间是按上次执行的时间开始计
              fixedDelay，间隔时间是按上次执行完成的时间开始计		
     4. fixedRate， 一个问题。
 		当任务的执行时长超过设置的间隔时长，则第二个任务就会被阻塞，可能也会阻塞第三个，第四个。
